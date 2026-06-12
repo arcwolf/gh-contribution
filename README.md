@@ -14,7 +14,7 @@
 
 **launchd plist (별도 위치):**
 ```
-~/Library/LaunchAgents/com.arcwolf.gh-heatmap-update.plist
+~/Library/LaunchAgents/com.strayarcwolf.gh-heatmap-update.plist
 ```
 
 ---
@@ -23,8 +23,8 @@
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                   launchd (매일 09:00)                    │
-│          com.arcwolf.gh-heatmap-update.plist             │
+│                   launchd (매일 12:00)                    │
+│        com.strayarcwolf.gh-heatmap-update.plist          │
 └─────────────────────┬────────────────────────────────────┘
                       │ python3 update-heatmap.py
                       ▼
@@ -88,7 +88,7 @@
 
 | 항목 | 값 |
 |------|----|
-| 실행 시각 | 매일 **09:00** (로컬 시간) |
+| 실행 시각 | 매일 **12:00** (로컬 시간) |
 | 수집 기간 | 실행 시점 기준 **최근 31일** |
 | 대상 | push 기준 최근 35일 이내 활성 repo |
 
@@ -109,7 +109,7 @@ cat ~/Library/Logs/gh-heatmap-update.error.log
 ## 🔧 수동 실행
 
 ```bash
-python3 ~/Desktop/05_Planning/gh-contribution/update-heatmap.py
+python3 ~/Garden/10-dev-general/gh-contribution/update-heatmap.py
 ```
 
 ---
@@ -121,6 +121,6 @@ python3 ~/Desktop/05_Planning/gh-contribution/update-heatmap.py
 launchctl list | grep gh-heatmap
 
 # 재등록
-launchctl unload ~/Library/LaunchAgents/com.arcwolf.gh-heatmap-update.plist
-launchctl load   ~/Library/LaunchAgents/com.arcwolf.gh-heatmap-update.plist
+launchctl unload ~/Library/LaunchAgents/com.strayarcwolf.gh-heatmap-update.plist
+launchctl load   ~/Library/LaunchAgents/com.strayarcwolf.gh-heatmap-update.plist
 ```
