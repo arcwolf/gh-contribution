@@ -19,6 +19,7 @@ def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         print(f"[WARN] cmd failed: {' '.join(cmd)}\n  stderr: {r.stderr.strip()}", file=sys.stderr)
+        return ""
     return r.stdout.strip()
 
 def get_active_repos(cutoff_days=35):
